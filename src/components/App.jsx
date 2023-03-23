@@ -41,10 +41,9 @@ import { Statistic } from "./Statistic/Statistic";
               good={good}
               neutral={neutral}
               bad={bad}
-              total={() => countTotalFeedback()}
-              positivePercentage={() => countPositiveFeedbackPercentage()} /> :
+              total={countTotalFeedback()}
+              positivePercentage={countPositiveFeedbackPercentage()} /> :
             <Notification message="There is no feedback" />}
-          <App/>
         </Section>
    </>
   }
