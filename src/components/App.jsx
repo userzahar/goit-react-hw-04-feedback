@@ -1,11 +1,34 @@
 
+import { useState } from "react";
 import { Component } from "react";
 import { FeedbackOptions } from "./FeedbackOptions/FeedbackOptions";
 import { Notification } from "./Notification/Notification";
 import { Section } from "./Section/Section";
 import { Statistic } from "./Statistic/Statistic";
 
-export class App extends Component {
+export const App = () => {
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
+  const options = { good, neutral, bad };
+  const onLeaveFeedback = key => {
+    this.setState(prevState => {
+      return { [key]: prevState[key] + 1 };
+    });
+  // function onLeaveFeedback (event) {
+  //   console.dir(event)
+  // }
+  
+
+  return <Section title="Please leave feedback">
+                <FeedbackOptions
+      options={Object.keys(options)}
+    onLeaveFeedback={onLeaveFeedback} 
+    />
+          </Section>
+}
+export class OldApp extends Component {
+
   state = {
     good: 0,
     neutral: 0,
@@ -41,7 +64,8 @@ export class App extends Component {
                     total={this.countTotalFeedback()}
                     positivePercentage={this.countPositiveFeedbackPercentage()} /> :
                   <Notification message="There is no feedback" />}
-                </Section>
+      </Section>
+      <App/>
             </>
   }
 };
