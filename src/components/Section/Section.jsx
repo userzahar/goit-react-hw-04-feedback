@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { SectionStyle } from './Section.styled';
 export function Section({ title, children }) {
     console.log( children)
-    return <div className="section">
-        <p className={"section__header"}>{title}</p>
+    return <SectionStyle className="section">
+        {title && <p className={"section__header"}>{title}</p>}
         {children}
-    </div>
+    </SectionStyle>
 }
 Section.propTypes = {
     title:PropTypes.string,
