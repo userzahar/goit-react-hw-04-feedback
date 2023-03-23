@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 export function FeedbackOptions({ options, onLeaveFeedback }) {
-    console.log(options)
     return <ul className="feedback__btn-list">
         {options.map(option => {
             return (
@@ -9,7 +8,7 @@ export function FeedbackOptions({ options, onLeaveFeedback }) {
                             className="feedback__button"
                             type="button"
                             name={option}
-                            onClick={() => { onLeaveFeedback(option); }}>
+                            onClick={onLeaveFeedback}>
                         {option}
                     </button>
                 </li>

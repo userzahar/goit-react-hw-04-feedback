@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 export function Section({ title, children }) {
+    console.log( children)
     return <div className="section">
         <p className={"section__header"}>{title}</p>
         {children}
@@ -7,5 +8,5 @@ export function Section({ title, children }) {
 }
 Section.propTypes = {
     title:PropTypes.string,
-    children:PropTypes.element,
+    children:PropTypes.object,
 }
