@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { SectionStyle } from './Section.styled';
 export function Section({ title, children }) {
-    console.log( children)
     return <SectionStyle className="section">
         {title && <p className={"section__header"}>{title}</p>}
         {children}

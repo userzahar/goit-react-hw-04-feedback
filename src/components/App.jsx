@@ -10,7 +10,6 @@ import { Statistic } from "./Statistic/Statistic";
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
    const options = { good, neutral, bad };
-   console.log(good+neutral+bad)
    const onLeaveFeedback = ({ target }) => {
      switch (target.name) {
        case "good": setGood(state => state+1)
